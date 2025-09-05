@@ -148,7 +148,7 @@ lazypodman --kill-tunnels             # Kill all tunnels created by lazypodman
 .
 ├── lazypodman                 # Main Bash script
 ├── README.md                  # You're here
-└── LICENSE                    # MIT (suggested)
+└── LICENSE                    # MIT
 ```
 
 ## 🧑‍💻 Author
