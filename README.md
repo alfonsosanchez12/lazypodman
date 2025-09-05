@@ -77,7 +77,7 @@ podman-remote system connection add my-remote \
 No installer yet. For now, just:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/alfonsosanchez12/lazypodman/main/lazypodman > ~/.local/bin/lazypodman
+curl -fsSL https://github.com/alfonsosanchez12/lazypodman/main/lazypodman > ~/.local/bin/lazypodman
 chmod +x ~/.local/bin/lazypodman
 ```
 
