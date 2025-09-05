@@ -110,18 +110,6 @@ lazypodman --restart my-remote        # Restart and show DOCKER_HOST
 lazypodman --kill-tunnels             # Kill all tunnels created by lazypodman
 ```
 
-## 🌐 Example: remote connection
-### Open tunnel only
-`lazypodman --open my-remote`
-
-### Export the env for docker/lazydocker
-`export DOCKER_HOST=unix://$HOME/.lazypodman/my-remote.sock`
-`export DOCKER_API_VERSION=1.41`
-
-### Run
-`docker ps`
-`lazydocker`
-
 ## 🧼 Maintenance
 
 **List all tunnels**
