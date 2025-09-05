@@ -47,20 +47,20 @@ ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519
 ssh-copy-id user@remote-host
 ```
 
-2. On the remote machine (as the same user):
+### 2. On the remote machine (as the same user):
 
-Enable Podman’s rootless socket and lingering:
+**Enable Podman’s rootless socket and lingering:**
 
 ```bash
 loginctl enable-linger $USER
 systemctl --user enable --now podman.socket
 ```
 
-Verify it's listening:
+**Verify it's listening:**
 
 `curl --unix-socket $XDG_RUNTIME_DIR/podman/podman.sock http://d/v3.0.0/libpod/_ping`
 
-3. Back on your local machine: create a podman-remote connection
+### 3. Back on your local machine: create a podman-remote connection
 
 ```bash
 podman-remote system connection add my-remote \
@@ -68,11 +68,11 @@ podman-remote system connection add my-remote \
   ssh://user@remote-host/run/user/1000/podman/podman.sock
 ```
 
-Test it:
+**Test it:**
 
 `podman-remote --connection my-remote info`
 
-📥 Installation
+## 📥 Installation
 
 No installer yet. For now, just:
 
@@ -85,9 +85,9 @@ Make sure ~/.local/bin is in your PATH. Add this to your ~/.bashrc or ~/.zshrc:
 
 `export PATH="$HOME/.local/bin:$PATH"`
 
-🧪 Usage
+## 🧪 Usage
 Interactive menu (recommended)
-lazypodman
+`lazypodman`
 
 Option 1: Manage local rootless Podman
 
@@ -95,7 +95,7 @@ Option 2: Pick from remote connections (via podman-remote)
 
 Option 3: Just open the tunnel (no Lazydocker)
 
-CLI usage
+### CLI usage
 
 ```bash
 lazypodman --local                     # Run against local Podman
@@ -109,30 +109,30 @@ lazypodman --restart my-remote        # Restart and show DOCKER_HOST
 lazypodman --kill-tunnels             # Kill all tunnels created by lazypodman
 ```
 
-🌐 Example: remote connection
-# Open tunnel only
+## 🌐 Example: remote connection
+### Open tunnel only
 `lazypodman --open my-remote`
 
-# Export the env for docker/lazydocker
+### Export the env for docker/lazydocker
 `export DOCKER_HOST=unix://$HOME/.lazypodman/my-remote.sock`
 `export DOCKER_API_VERSION=1.41`
 
-# Run
+### Run
 `docker ps`
 `lazydocker`
 
-🧼 Maintenance
+## 🧼 Maintenance
 
-List all tunnels
+**List all tunnels**
 `lazypodman --list-tunnels`
 
-Stop one
+**Stop one**
 `lazypodman --stop my-remote`
 
-Kill all
+**Kill all**
 `lazypodman --kill-tunnels`
 
-🛠️ To-Do
+## 🛠️ To-Do
 
  ✅ Add --restart and --list-tunnels with PID/uptime ✔️
 
@@ -142,7 +142,7 @@ Kill all
 
  ⏳ Config file for defaults (API version, autossh, etc.)
 
-📁 Project Structure
+## 📁 Project Structure
 ```bash
 .
 ├── lazypodman                 # Main Bash script
@@ -150,7 +150,7 @@ Kill all
 └── LICENSE                    # MIT (suggested)
 ```
 
-🧑‍💻 Author
+## 🧑‍💻 Author
 
 Developed by Alfonso Sanchez
 
