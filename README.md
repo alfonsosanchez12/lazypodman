@@ -22,7 +22,7 @@ Install the following on your **local system**:
 | `docker`         | Optional: for other tooling  | `sudo apt install docker.io` or via Docker site   |
 | `podman`         | Local container engine       | `sudo apt install podman` or `brew install podman`|
 | `podman-remote`  | Connect to remote Podman     | Included with Podman 4+                           |
-| `lazydocker`     | Docker/Podman TUI            | [Install instructions](https://github.com/jesseduffield/lazydocker#install) |
+| `lazydocker`     | Docker/Podman TUI            | Install                                           |
 | `ssh`            | Tunnel creation              | Included on Linux/macOS                           |
 | `jq`             | Parses `podman-remote` JSON  | `sudo apt install jq` or `brew install jq`        |
 
