@@ -98,7 +98,8 @@ Option 3: Just open the tunnel (no Lazydocker)
 ### CLI usage
 
 ```bash
-lazypodman --local                     # Run against local Podman
+lazypodman                            # Run interactive Menu
+lazypodman --local                    # Run against local Podman
 lazypodman --remote my-remote         # Open tunnel and run Lazydocker
 lazypodman --remote my-remote --persist  # Keep SSH tunnel alive after Lazydocker exits
 
